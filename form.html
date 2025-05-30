@@ -15,31 +15,31 @@
         <option value="windy”>Windy</option>
     </select>
 
-<script>
-    function verifyUser() {
-        var username = document.getElementById("usernameInput").value;
-        var password = document.getElementById("passwordInput").value;
-        checkUserCreds(username, password);
-    }
-
-    function checkUserCreds(username, password) {
-        var systemUsername = "Bond";
-        var systemPassword = "007";
-
-        if (username === systemUsername && password === systemPassword) {
-            document.getElementById("message").innerHTML = "Correct. Logging you in…";
-        } else {
-            document.getElementById("message").innerHTML = "Username or password are incorrect";
+    <script>
+        function verifyUser() {
+            var username = document.getElementById("usernameInput").value;
+            var password = document.getElementById("passwordInput").value;
+            checkUserCreds(username, password);
         }
-    }
-    switch(weatherSelected){
-    case “sunny”:
-    advise = “Wear your sunglasses”;
-    break;
-    case “windy”:
-    advise = “Wear a jacket”;
-    break;
-    }
-</script>
+
+        function checkUserCreds(username, password) {
+            var systemUsername = "Bond";
+            var systemPassword = "007";
+
+            if (username === systemUsername && password === systemPassword) {
+                document.getElementById("message").innerHTML = "Correct. Logging you in…";
+            } else {
+                document.getElementById("message").innerHTML = "Username or password are incorrect";
+            }
+        }
+        switch(weatherSelected){
+        case “sunny”:
+        advise = “Wear your sunglasses”;
+        break;
+        case “windy”:
+        advise = “Wear a jacket”;
+        break;
+        }
+    </script>
 </body>
 </html>
