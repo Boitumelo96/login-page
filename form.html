@@ -7,21 +7,32 @@
 </head>
 <body>
     <form>
-        <label for=”usernameInput”>Username:</label><input type=”text” id=”usernameInput”/><br/>
-        <label for=”passwordInput”>Password:</label><input type=”password” id=”passwordInput”/><br/>
+        <label for="usernameInput">Username:</label>
+        <input type="text" id="usernameInput" /><br/>
+        <label for="passwordInput">Password:</label>
+        <input type="password" id="passwordInput" /><br/>
+        <!-- Added a button to trigger login -->
+        <button type="button" onclick="verifyUser()">Login</button>
     </form>
-    <select id=”weather”>
-        <option value=”sunny”>Sunny</option>
-        <option value="windy”>Windy</option>
+    
+    <!-- Dropdown for weather selection -->
+    <select id="weather">
+        <option value="sunny">Sunny</option>
+        <option value="windy">Windy</option>
     </select>
 
+    <!-- Element to display messages -->
+    <div id="message"></div>
+
     <script>
+        // Function to verify user credentials
         function verifyUser() {
             var username = document.getElementById("usernameInput").value;
             var password = document.getElementById("passwordInput").value;
             checkUserCreds(username, password);
         }
 
+        // Function to check if the provided credentials are correct
         function checkUserCreds(username, password) {
             var systemUsername = "Bond";
             var systemPassword = "007";
@@ -32,14 +43,23 @@
                 document.getElementById("message").innerHTML = "Username or password are incorrect";
             }
         }
-        switch(weatherSelected){
-        case “sunny”:
-        advise = “Wear your sunglasses”;
-        break;
-        case “windy”:
-        advise = “Wear a jacket”;
-        break;
+
+        // Retrieve the selected weather option and provide advice
+        var weatherSelected = document.getElementById("weather").value;
+        var advise = "";
+        switch (weatherSelected) {
+            case "sunny":
+                advise = "Wear your sunglasses";
+                break;
+            case "windy":
+                advise = "Wear a jacket";
+                break;
+            default:
+                advise = "No advice available";
+                break;
         }
+        // Log the weather advice for debugging purposes
+        console.log("Weather advice: " + advise);
     </script>
 </body>
 </html>
