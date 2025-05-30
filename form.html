@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>
-        <label for="usernameInput">Username:</label>
-        <input type="text" id="usernameInput" /><br/>
-        <label for="passwordInput">Password:</label>
-        <input type="password" id="passwordInput" /><br/>
-        <!-- Added a button to trigger login -->
-        <button type="button" onclick="verifyUser()">Login</button>
-    </form>
-    
-    <!-- Dropdown for weather selection -->
-    <select id="weather">
-        <option value="sunny">Sunny</option>
-        <option value="windy">Windy</option>
-    </select>
-
-    <!-- Element to display messages -->
+    <div class="login-container">
+    <h2>Login</h2>
+    <div class="form-group">
+        <label for="usernameInput">Username</label>
+        <input type="text" id="usernameInput">
+    </div>
+    <div class="form-group">
+        <label for="passwordInput">Password</label>
+        <input type="password" id="passwordInput">
+    </div>
+    <div class="form-group">
+        <label for="weather">Weather</label>
+        <select id="weather">
+            <option value="sunny">Sunny</option>
+            <option value="windy">Windy</option>
+        </select>
+    </div>
+    <button type="button" onclick="verifyUser()">Login</button>
     <div id="message"></div>
+</div>
+
 
     <script>
         // Function to verify user credentials
