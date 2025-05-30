@@ -1,0 +1,1 @@
+This project is a simple, styled login page using HTML, CSS, and JavaScript. It verifies a hardcoded username and password and displays messages accordingly. It also includes a dropdown for weather advice and polished visual styling.
