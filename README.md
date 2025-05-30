@@ -1,6 +1,14 @@
 This project is a simple, styled login page using HTML, CSS, and JavaScript. It verifies a hardcoded username and password and displays messages accordingly. It also includes a dropdown for weather advice and polished visual styling.
 
 
+/login-page-project
+
+         │
+         ├── index.html         # Main HTML file with form
+         ├── styles.css         # Styling for the page
+         └── script.js          # JavaScript for login and weather logic
+
+
 
  Features
 
@@ -14,7 +22,9 @@ This project is a simple, styled login page using HTML, CSS, and JavaScript. It 
 
     Weather-based suggestion feature
 
-    Requirements
+
+
+Requirements
 
     A modern browser (Chrome, Firefox, Edge, Safari)
 
