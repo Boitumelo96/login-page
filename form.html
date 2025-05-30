@@ -7,10 +7,13 @@
 </head>
 <body>
     <form>
-    <label for=”usernameInput”>Username:</label><input type=”text” id=”usernameInput”/><br/>
-    <label for=”passwordInput”>Password:</label><input type=”password” id=”passwordInput”/><br/>
+        <label for=”usernameInput”>Username:</label><input type=”text” id=”usernameInput”/><br/>
+        <label for=”passwordInput”>Password:</label><input type=”password” id=”passwordInput”/><br/>
     </form>
-
+    <select id=”weather”>
+        <option value=”sunny”>Sunny</option>
+        <option value="windy”>Windy</option>
+    </select>
 
 <script>
     function verifyUser() {
@@ -28,6 +31,14 @@
         } else {
             document.getElementById("message").innerHTML = "Username or password are incorrect";
         }
+    }
+    switch(weatherSelected){
+    case “sunny”:
+    advise = “Wear your sunglasses”;
+    break;
+    case “windy”:
+    advise = “Wear a jacket”;
+    break;
     }
 </script>
 </body>
