@@ -30,41 +30,41 @@
 
 
     <script>
-        // Function to verify user credentials
-        function verifyUser() {
-            var username = document.getElementById("usernameInput").value;
-            var password = document.getElementById("passwordInput").value;
-            checkUserCreds(username, password);
-        }
+    function verifyUser() {
+        const username = document.getElementById("usernameInput").value;
+        const password = document.getElementById("passwordInput").value;
+        const weather = document.getElementById("weather").value;
 
-        // Function to check if the provided credentials are correct
-        function checkUserCreds(username, password) {
-            var systemUsername = "Bond";
-            var systemPassword = "007";
+        checkUserCreds(username, password, weather);
+    }
 
-            if (username === systemUsername && password === systemPassword) {
-                document.getElementById("message").innerHTML = "Correct. Logging you in…";
-            } else {
-                document.getElementById("message").innerHTML = "Username or password are incorrect";
+    function checkUserCreds(username, password, weather) {
+        const systemUsername = "Bond";
+        const systemPassword = "007";
+        const messageDiv = document.getElementById("message");
+
+        if (username === systemUsername && password === systemPassword) {
+            let advice = "";
+
+            switch (weather) {
+                case "sunny":
+                    advice = "It's sunny — wear your sunglasses 😎";
+                    break;
+                case "windy":
+                    advice = "It's windy — wear a jacket 🧥";
+                    break;
+                default:
+                    advice = "Weather advice not available.";
             }
-        }
 
-        // Retrieve the selected weather option and provide advice
-        var weatherSelected = document.getElementById("weather").value;
-        var advise = "";
-        switch (weatherSelected) {
-            case "sunny":
-                advise = "Wear your sunglasses";
-                break;
-            case "windy":
-                advise = "Wear a jacket";
-                break;
-            default:
-                advise = "No advice available";
-                break;
+            messageDiv.innerHTML = `✅ Correct. Logging you in...<br>${advice}`;
+            messageDiv.style.color = "#28a745"; // green for success
+        } else {
+            messageDiv.innerHTML = "❌ Username or password are incorrect";
+            messageDiv.style.color = "#e74c3c"; // red for error
         }
-        // Log the weather advice for debugging purposes
-        console.log("Weather advice: " + advise);
-    </script>
+    }
+</script>
+
 </body>
 </html>
